@@ -1,0 +1,66 @@
+You are a Semantic SEO strategist.
+
+INPUT
+1) HUB CONTEXT
+{
+ "hub_id":"",
+ "hub_title":"",
+ "attribute_focus":[]
+}
+
+2) SPOKE JSON
+<PASTE ORIGINAL SPOKE OBJECT>
+
+3) SPOKE STRUCTURE
+<PASTE STEP 1 OUTPUT>
+
+TASK
+Generate search coverage for this spoke article.
+
+Select questions and queries using:
+- query_pattern_set (primary source)
+- attribute_focus modifiers
+- supporting_entities
+
+REQUIREMENTS
+
+Queries
+- representative_queries = 8
+- represented_queries = 12
+- Include modifiers such as:
+  cost, prices, benefits, best, affordable, cheap, what is, how does.
+
+FAQ
+- Select 8 questions users actually ask
+- Questions should address:
+  • cost
+  • benefits
+  • risks
+  • comparisons
+  • how the method works
+  • who it is best for
+
+Entity Coverage
+Ensure the following appear naturally in questions or queries:
+- spoke_title entity
+- at least 3 supporting_entities
+
+RULES
+- Keep answers short (max 20 words)
+- Do not modify the outline
+- Do not repeat unnecessary input fields
+- Output minimal JSON only
+
+OUTPUT
+Return ONLY valid JSON.
+
+{
+ "spoke_id":"",
+ "query_network":{
+   "representative_queries":[],
+   "represented_queries":[]
+ },
+ "faq":[
+   {"question":"","answer":""}
+ ]
+}
