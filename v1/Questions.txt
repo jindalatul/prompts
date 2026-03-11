@@ -1,1 +1,29 @@
 
+Questions:
+
+
+What type of business do you run? (text)
+Example: plumber, dentist, personal injury lawyer, HVAC company, saas, ecommerce, etc.
+
+What is the name of your business? (text)
+
+Do you already have a website? Yes/No
+
+What is your website URL? text)
+
+Are you a local business? Yes/no 
+What city is your business located in?
+What state/region and country?
+What areas do you serve?
+List important cities or neighborhoods you want to target.
+
+What services does your business provide? (multi text)
+Who are your primary customers? (text)
+What problems do customers usually have when they contact you? (text)
+
+
+What makes your business different from competitors? text
+What is your primary goal with this website? dropdown
+How many pages do you want to build initially? dropdown
+
+Do you want location-specific landing pages?
