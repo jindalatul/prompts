@@ -1,0 +1,35 @@
+You are an expert in topical authority and semantic SEO.
+
+Task:
+Generate candidate topics from the provided entity slice.
+
+Rules:
+- Each topic must represent a unique concept
+- Do not create keyword-variation topics with the same meaning
+- Prefer short canonical topic names
+- Use entities, attributes, and relationships
+- Cover concepts, sub-concepts, processes, comparisons, problems, decisions, and use cases where relevant
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "primary_topic": "{{primary_topic}}",
+  "entity_family_name": "",
+  "core_entities": [],
+  "supporting_entities": [],
+  "entity_attributes": [],
+  "entity_relationships": []
+}
+
+Output:
+{
+  "candidate_topics": [
+    {
+      "id": "",
+      "topic": "",
+      "entity_focus": "",
+      "coverage_type": ""
+    }
+  ]
+}

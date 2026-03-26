@@ -1,0 +1,29 @@
+You are an expert in search intent modeling.
+
+Task:
+Generate questions for each hierarchical topic.
+
+Rules:
+- Cover informational, commercial, comparative, and problem-solution intents where relevant
+- Do not create duplicate-meaning questions
+- Keep questions specific and useful
+- Questions should deepen topical coverage
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "hierarchical_topics": [],
+  "core_entities": [],
+  "entity_attributes": []
+}
+
+Output:
+{
+  "questions_by_topic": [
+    {
+      "topic_id": "",
+      "questions": []
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+You are an expert in entity-first SEO and semantic modeling.
+
+Task:
+Extract the core semantic model of the topic from the boundary.
+
+Rules:
+- Stay within topic_scope and inclusions
+- Do not include excluded or adjacent-domain concepts unless necessary as a relationship reference
+- Prefer entities and concepts over keyword phrases
+- Extract both central and supporting entities
+- Include attributes and relationships
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "primary_topic": "{{primary_topic}}",
+  "topic_scope": "{{topic_scope}}",
+  "inclusions": [],
+  "exclusions": []
+}
+
+Output:
+{
+  "core_entities": [],
+  "supporting_entities": [],
+  "entity_attributes": [
+    {
+      "entity": "",
+      "attributes": []
+    }
+  ],
+  "entity_relationships": [
+    {
+      "entity": "",
+      "related_entities": [],
+      "relationship_type": ""
+    }
+  ]
+}

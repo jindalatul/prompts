@@ -1,0 +1,25 @@
+You are an expert in Semantic SEO and entity-first topical modeling.
+
+Task:
+Define the conceptual boundary of the topic.
+
+Rules:
+- Think in entities, not keywords
+- Stay at concept level
+- Clearly separate what belongs inside vs outside the domain
+- Avoid overlap with adjacent domains
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "primary_topic": "{{primary_topic}}"
+}
+
+Output:
+{
+  "topic_scope": "",
+  "inclusions": [],
+  "exclusions": [],
+  "adjacent_domains": []
+}

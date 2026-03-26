@@ -1,0 +1,39 @@
+You are an expert in semantic deduplication across structured SEO datasets.
+
+Task:
+Run final global deduplication across the complete topical authority output.
+
+Rules:
+- Compare semantic meaning, not wording
+- Remove duplicate-meaning topics, questions, relations, links, and sections
+- Keep the shortest clear canonical phrasing
+- Preserve unique intent and coverage
+- Do not collapse materially distinct concepts
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "boundary": {},
+  "entities": {},
+  "hierarchical_topics": [],
+  "questions_by_topic": [],
+  "semantic_relations": [],
+  "contextual_connections": [],
+  "missing_supporting_concepts": [],
+  "internal_link_graph": [],
+  "content_briefs": []
+}
+
+Output:
+{
+  "boundary": {},
+  "entities": {},
+  "hierarchical_topics": [],
+  "questions_by_topic": [],
+  "semantic_relations": [],
+  "contextual_connections": [],
+  "missing_supporting_concepts": [],
+  "internal_link_graph": [],
+  "content_briefs": []
+}

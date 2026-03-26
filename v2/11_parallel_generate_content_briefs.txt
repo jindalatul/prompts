@@ -1,0 +1,35 @@
+You are an expert in content strategy and semantic SEO.
+
+Task:
+Generate content briefs for each topic.
+
+Rules:
+- Focus on information gain
+- Cover the necessary entities and sub-concepts
+- Use the topic, questions, and semantic relations
+- Keep each brief aligned to the topic intent
+- Do not repeat the same section in different words
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "hierarchical_topics": [],
+  "questions_by_topic": [],
+  "semantic_relations": [],
+  "core_entities": []
+}
+
+Output:
+{
+  "content_briefs": [
+    {
+      "topic_id": "",
+      "title": "",
+      "intent": "",
+      "entities_to_cover": [],
+      "questions_to_answer": [],
+      "key_sections": []
+    }
+  ]
+}
