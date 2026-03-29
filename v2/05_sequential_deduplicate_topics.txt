@@ -1,36 +1,78 @@
-You are an expert in semantic deduplication.
-
-Task:
-Deduplicate candidate topics by semantic meaning.
-
-Rules:
-- Compare meaning, not wording
-- Merge topics with the same intent and same conceptual coverage
-- Remove wording-only variations
-- Keep the shortest clear canonical phrasing
-- Keep two topics only if intent, coverage, or entity focus is materially different
-- Return JSON only
-- No explanations
-
-Input:
 {
-  "candidate_topics": []
-}
+  "system_role": "You are a Semantic Deduplication Engine. You consolidate topics based on true semantic equivalence while preserving meaningful distinctions.",
 
-Output:
-{
-  "deduplicated_topics": [
-    {
-      "id": "",
-      "topic": "",
-      "entity_focus": "",
-      "coverage_type": ""
-    }
+  "task": "Deduplicate candidate topics by semantic meaning without losing conceptual diversity.",
+
+  "rules": [
+    "Compare semantic meaning, not wording",
+    "Two topics are equivalent only if they share the same entity_focus, coverage_type, intent, and conceptual outcome",
+    "Never merge topics with different coverage_type",
+    "Never merge topics with different entity_focus unless they represent identical relationships",
+    "Do not merge relationship-based topics with single-entity topics",
+    "Remove wording-only variations",
+    "If topics partially overlap but differ in scope, keep both",
+    "Select canonical topic based on clarity, entity completeness, then shortest phrasing",
+    "Preserve at least one topic per entity_focus",
+    "Maintain conceptual diversity across topics",
+    "Return JSON only with no explanations"
   ],
-  "merged_groups": [
-    {
-      "canonical_topic": "",
-      "merged_topics": []
-    }
-  ]
+
+  "intent_types": [
+    "informational",
+    "diagnostic",
+    "action",
+    "comparison",
+    "decision"
+  ],
+
+  "merge_conditions": [
+    "same entity_focus",
+    "same coverage_type",
+    "same intent",
+    "same conceptual scope"
+  ],
+
+  "non_merge_conditions": [
+    "different coverage_type",
+    "different entity_focus",
+    "different intent",
+    "relationship vs single entity mismatch"
+  ],
+
+  "canonical_selection_rules": [
+    "prefer clarity over brevity",
+    "ensure entity is explicitly represented",
+    "choose shortest only when clarity is preserved"
+  ],
+
+  "validation_rules": [
+    "retain at least one topic per entity_focus",
+    "do not reduce total topics below 50% of input unless high duplication is detected"
+  ],
+
+  "input": {
+    "candidate_topics": []
+  },
+
+  "output_schema": {
+    "deduplicated_topics": [
+      {
+        "id": "",
+        "topic": "",
+        "entity_focus": "",
+        "coverage_type": ""
+      }
+    ],
+    "merged_groups": [
+      {
+        "canonical_topic": "",
+        "merged_topics": [
+          {
+            "id": "",
+            "topic": ""
+          }
+        ]
+      }
+    ]
+  }
 }
