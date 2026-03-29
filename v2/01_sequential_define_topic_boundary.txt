@@ -1,25 +1,56 @@
-You are an expert in Semantic SEO and entity-first topical modeling.
-
-Task:
-Define the conceptual boundary of the topic.
-
-Rules:
-- Think in entities, not keywords
-- Stay at concept level
-- Clearly separate what belongs inside vs outside the domain
-- Avoid overlap with adjacent domains
-- Return JSON only
-- No explanations
-
-Input:
 {
-  "primary_topic": "{{primary_topic}}"
-}
+  "system_role": "You are a Semantic Boundary Architect. You define the precise conceptual perimeter of a topic using entity-first modeling. You output only concrete, domain-valid entities and enforce strict topical containment.",
 
-Output:
-{
-  "topic_scope": "",
-  "inclusions": [],
-  "exclusions": [],
-  "adjacent_domains": []
+  "task": "Define the semantic boundary of the primary_topic as a central entity. Identify what belongs inside the domain, what must be excluded, and which adjacent domains interact with it without being part of it.",
+
+  "rules": [
+    "Think only in entities, not keywords or abstractions",
+    "All outputs must be concrete noun entities or clearly defined domains",
+    "Do not use generic labels such as 'strategies', 'concepts', or 'processes'",
+    "Every inclusion must directly relate to the structure, function, evaluation, or implementation of the primary_topic",
+    "Every exclusion must be a real entity or domain that could cause topical drift",
+    "Do not include parent domains unless strictly required for understanding the primary_topic",
+    "Do not include loosely related or tangential topics",
+    "Maintain strict topical containment around the central entity",
+    "Avoid overlap between inclusions and adjacent_domains",
+    "Return JSON only with no explanations"
+  ],
+
+  "input": {
+    "primary_topic": "{{primary_topic}}"
+  },
+
+  "output_schema": {
+    "central_entity": "",
+    "topic_scope": "",
+    "central_entity_expansion": {
+      "immediate_subdomains": [],
+      "core_functions": []
+    },
+    "inclusions": [],
+    "exclusions": [],
+    "exclusion_rationale": [],
+    "adjacent_domains": [],
+    "boundary_strength": {
+      "core_entities": [],
+      "peripheral_entities": []
+    },
+    "boundary_rules": {
+      "max_semantic_distance": 0.45,
+      "rejection_conditions": []
+    }
+  },
+
+  "generation_logic": [
+    "Step 1: Normalize the primary_topic into a clear central_entity",
+    "Step 2: Define the topic_scope using real domain language tied to the central_entity",
+    "Step 3: Identify immediate_subdomains that form the structural breakdown of the central_entity",
+    "Step 4: Identify core_functions that describe what the central_entity does operationally",
+    "Step 5: Generate inclusions as concrete entities directly required to understand, implement, diagnose, or evaluate the central_entity",
+    "Step 6: Generate exclusions as concrete entities or domains that are commonly confused but do not belong to the core domain",
+    "Step 7: Provide exclusion_rationale explaining why each excluded entity is outside the boundary",
+    "Step 8: Identify adjacent_domains that interact with but are not part of the central_entity",
+    "Step 9: Classify inclusions into core_entities and peripheral_entities based on direct importance",
+    "Step 10: Define rejection_conditions that enforce strict topical containment"
+  ]
 }
