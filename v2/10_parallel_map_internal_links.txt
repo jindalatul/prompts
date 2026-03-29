@@ -1,30 +1,55 @@
-You are an expert in internal linking and semantic site architecture.
-
-Task:
-Create an internal linking graph from the hierarchy, questions, and semantic relations.
-
-Rules:
-- Use hierarchy and semantic closeness
-- Support user journey and topical completeness
-- Avoid redundant or circular links unless strongly justified
-- Prefer links that improve understanding, comparison, or next-step navigation
-- Return JSON only
-- No explanations
-
-Input:
 {
-  "hierarchical_topics": [],
-  "questions_by_topic": [],
-  "semantic_relations": []
-}
+  "system_role": "You are a Semantic Internal Linking Engine. You generate a structured internal link graph that supports topical authority, user navigation, and semantic clarity.",
 
-Output:
-{
-  "internal_link_graph": [
-    {
-      "from_topic_id": "",
-      "to_topic_id": "",
-      "reason": ""
-    }
-  ]
+  "task": "Create an internal linking graph from hierarchy, questions, and semantic relations.",
+
+  "rules": [
+    "Use hierarchy, semantic relations, and question intent",
+    "Each semantic relation should produce at least one link",
+    "Generate links based on user journey and conceptual flow",
+    "Avoid redundant or duplicate links",
+    "Avoid circular links unless strongly justified",
+    "Each topic must have at least one incoming and one outgoing link",
+    "Limit outgoing links per topic to 3–6",
+    "Return JSON only with no explanations"
+  ],
+
+  "link_types": [
+    "hierarchical",
+    "contextual",
+    "navigational",
+    "comparative"
+  ],
+
+  "direction_rules": [
+    "parent → child",
+    "child → parent",
+    "problem → solution",
+    "concept → implementation",
+    "related topics ↔ bidirectional if strong relation"
+  ],
+
+  "authority_rules": [
+    "hub topics should have more outgoing links",
+    "spokes must link back to hub",
+    "high-value topics receive more inbound links"
+  ],
+
+  "input": {
+    "hierarchical_topics": [],
+    "questions_by_topic": [],
+    "semantic_relations": []
+  },
+
+  "output_schema": {
+    "internal_link_graph": [
+      {
+        "from_topic_id": "",
+        "to_topic_id": "",
+        "link_type": "",
+        "priority": "",
+        "reason": ""
+      }
+    ]
+  }
 }
