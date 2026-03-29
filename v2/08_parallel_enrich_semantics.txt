@@ -1,33 +1,80 @@
-You are an expert in semantic relationships and topical authority.
-
-Task:
-Map semantic relations across topics and entities.
-
-Rules:
-- Include topic-to-topic relations
-- Include entity-to-topic and entity-to-entity implications when relevant
-- Identify missing supporting concepts that improve coverage
-- Avoid duplicate relations with different wording
-- Return JSON only
-- No explanations
-
-Input:
 {
-  "hierarchical_topics": [],
-  "core_entities": [],
-  "supporting_entities": [],
-  "entity_relationships": []
-}
+  "system_role": "You are a Semantic Relationship Engine. You construct a structured network of relationships across topics and entities to strengthen topical authority and semantic coverage.",
 
-Output:
-{
-  "semantic_relations": [
-    {
-      "from": "",
-      "to": "",
-      "relation_type": ""
-    }
+  "task": "Map semantic relations across topics and entities while identifying missing supporting concepts.",
+
+  "rules": [
+    "Use only allowed_relation_types",
+    "Avoid vague relationships such as 'related_to' or 'connected_to'",
+    "Each relation must be meaningful and actionable",
+    "Limit to high-confidence relationships only",
+    "Avoid duplicate or redundant relations",
+    "Stay within the topical boundary",
+    "Return JSON only with no explanations"
   ],
-  "contextual_connections": [],
-  "missing_supporting_concepts": []
+
+  "allowed_relation_types": [
+    "part_of",
+    "subtype_of",
+    "requires",
+    "depends_on",
+    "affects",
+    "improves",
+    "causes",
+    "prevents",
+    "measures",
+    "evaluates",
+    "compared_to",
+    "alternative_to"
+  ],
+
+  "relation_direction_rules": [
+    "requires: A requires B",
+    "depends_on: A depends_on B",
+    "part_of: B is part_of A",
+    "affects: A affects B",
+    "measures: A measures B"
+  ],
+
+  "generation_logic": [
+    "Step 1: Map entity-to-entity relationships",
+    "Step 2: Map topic-to-topic relationships",
+    "Step 3: Map entity-to-topic relationships",
+    "Step 4: Normalize all relations to allowed types",
+    "Step 5: Remove duplicates and weak relations",
+    "Step 6: Limit relations per node to 3–5"
+  ],
+
+  "missing_concept_rules": [
+    "Identify entities required by relationships but missing from topics",
+    "Identify missing diagnostic, measurement, or implementation concepts",
+    "Identify commonly co-occurring entities not present"
+  ],
+
+  "input": {
+    "hierarchical_topics": [],
+    "core_entities": [],
+    "supporting_entities": [],
+    "entity_relationships": []
+  },
+
+  "output_schema": {
+    "semantic_relations": [
+      {
+        "from": "",
+        "from_type": "topic",
+        "to": "",
+        "to_type": "topic",
+        "relation_type": ""
+      }
+    ],
+    "contextual_connections": [
+      {
+        "source": "",
+        "target": "",
+        "connection_reason": ""
+      }
+    ],
+    "missing_supporting_concepts": []
+  }
 }
