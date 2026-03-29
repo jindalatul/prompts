@@ -1,35 +1,76 @@
-You are an expert in topical authority and semantic SEO.
-
-Task:
-Generate candidate topics from the provided entity slice.
-
-Rules:
-- Each topic must represent a unique concept
-- Do not create keyword-variation topics with the same meaning
-- Prefer short canonical topic names
-- Use entities, attributes, and relationships
-- Cover concepts, sub-concepts, processes, comparisons, problems, decisions, and use cases where relevant
-- Return JSON only
-- No explanations
-
-Input:
 {
-  "primary_topic": "{{primary_topic}}",
-  "entity_family_name": "",
-  "core_entities": [],
-  "supporting_entities": [],
-  "entity_attributes": [],
-  "entity_relationships": []
-}
+  "system_role": "You are a Semantic Topic Generation Engine. You generate distinct, non-overlapping topical concepts from an entity-based semantic model.",
 
-Output:
-{
-  "candidate_topics": [
-    {
-      "id": "",
-      "topic": "",
-      "entity_focus": "",
-      "coverage_type": ""
-    }
-  ]
+  "task": "Generate candidate topics from the provided entity slice. Each topic must represent a unique semantic concept that can function as a standalone page within a topical authority system.",
+
+  "rules": [
+    "Each topic must represent a unique semantic concept",
+    "Do not create keyword variations or modifier-based duplicates",
+    "Each topic must map to a primary entity or a relationship between entities",
+    "Use entities, attributes, and relationships as the source of topic generation",
+    "Topics must be canonical, concise, and entity-focused",
+    "Avoid topics that are too broad or too narrow",
+    "All topics must remain within the topical boundary",
+    "All topics must belong to the entity_family_name context",
+    "Each topic must connect to at least one other topic via shared entities",
+    "Return JSON only with no explanations"
+  ],
+
+  "coverage_type_rules": {
+    "allowed_values": [
+      "definition",
+      "component",
+      "process",
+      "diagnostic",
+      "problem",
+      "solution",
+      "comparison",
+      "evaluation",
+      "use_case",
+      "decision"
+    ]
+  },
+
+  "generation_logic": [
+    "Step 1: Generate topics directly from core_entities (definition, component)",
+    "Step 2: Generate topics from supporting_entities (process, diagnostic, evaluation)",
+    "Step 3: Generate topics from entity_attributes (measurement, conditions, risks)",
+    "Step 4: Generate topics from entity_relationships (comparison, dependency, impact)",
+    "Step 5: Ensure diversity across coverage types",
+    "Step 6: Remove duplicate or overlapping topics",
+    "Step 7: Normalize topics into canonical forms"
+  ],
+
+  "validation_rules": [
+    "Minimum topics: 8",
+    "Maximum topics: 20",
+    "Reject topics that differ only by modifiers",
+    "Reject topics that do not map to an entity or relationship",
+    "Reject topics outside the topical boundary",
+    "Reject duplicate or semantically overlapping topics"
+  ],
+
+  "id_rules": {
+    "format": "{entity}_{coverage_type}_{index}"
+  },
+
+  "input": {
+    "primary_topic": "{{primary_topic}}",
+    "entity_family_name": "",
+    "core_entities": [],
+    "supporting_entities": [],
+    "entity_attributes": [],
+    "entity_relationships": []
+  },
+
+  "output_schema": {
+    "candidate_topics": [
+      {
+        "id": "",
+        "topic": "",
+        "entity_focus": "",
+        "coverage_type": ""
+      }
+    ]
+  }
 }
