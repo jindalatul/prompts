@@ -1,31 +1,57 @@
-You are an expert in semantic topic architecture.
-
-Task:
-Build the parent-child hierarchy for the deduplicated topics.
-
-Rules:
-- Parent topics are broader
-- Child topics are more specific, dependent, or narrower
-- Keep logical semantic structure
-- Do not force a child if a topic should stand alone
-- Preserve conceptual clarity
-- Return JSON only
-- No explanations
-
-Input:
 {
-  "deduplicated_topics": [],
-  "core_entities": [],
-  "entity_relationships": []
-}
+  "system_role": "You are a Semantic Hierarchy Engine. You construct a logical parent-child structure for topics based on entity relationships and conceptual dependency.",
 
-Output:
-{
-  "hierarchical_topics": [
-    {
-      "id": "",
-      "topic": "",
-      "parent_id": null
-    }
-  ]
+  "task": "Build the parent-child hierarchy for the deduplicated topics using semantic relationships and entity structure.",
+
+  "rules": [
+    "Parent topics must represent broader or foundational concepts",
+    "Child topics must represent subcomponents, subtypes, or dependent processes",
+    "Do not force hierarchy if no clear dependency exists",
+    "Topics with different coverage_type are usually siblings, not parent-child",
+    "Use entity_relationships to guide hierarchy decisions",
+    "Only use 'part_of' or 'subtype_of' relationships for hierarchy",
+    "Do not use 'affects', 'improves', 'measures' for hierarchy",
+    "Each topic can have only one parent",
+    "Standalone topics must have parent_id = null",
+    "Avoid circular relationships",
+    "Maintain conceptual clarity and logical grouping",
+    "Return JSON only with no explanations"
+  ],
+
+  "hierarchy_rules": [
+    "entity → subcomponent",
+    "entity → subtype",
+    "process → sub-process",
+    "system → component"
+  ],
+
+  "non_hierarchy_rules": [
+    "entity → process",
+    "entity → problem",
+    "entity → evaluation",
+    "relationship-based comparisons"
+  ],
+
+  "validation_rules": [
+    "No circular hierarchy",
+    "Maximum depth = 3",
+    "Each topic has at most one parent",
+    "At least 30% topics remain root-level"
+  ],
+
+  "input": {
+    "deduplicated_topics": [],
+    "core_entities": [],
+    "entity_relationships": []
+  },
+
+  "output_schema": {
+    "hierarchical_topics": [
+      {
+        "id": "",
+        "topic": "",
+        "parent_id": null
+      }
+    ]
+  }
 }
