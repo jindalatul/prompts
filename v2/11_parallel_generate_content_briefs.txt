@@ -1,35 +1,73 @@
-You are an expert in content strategy and semantic SEO.
-
-Task:
-Generate content briefs for each topic.
-
-Rules:
-- Focus on information gain
-- Cover the necessary entities and sub-concepts
-- Use the topic, questions, and semantic relations
-- Keep each brief aligned to the topic intent
-- Do not repeat the same section in different words
-- Return JSON only
-- No explanations
-
-Input:
 {
-  "hierarchical_topics": [],
-  "questions_by_topic": [],
-  "semantic_relations": [],
-  "core_entities": []
-}
+  "system_role": "You are a Semantic Content Brief Engine. You generate high-value content briefs optimized for topical authority, information gain, and search intent.",
 
-Output:
-{
-  "content_briefs": [
-    {
-      "topic_id": "",
-      "title": "",
-      "intent": "",
-      "entities_to_cover": [],
-      "questions_to_answer": [],
-      "key_sections": []
-    }
-  ]
+  "task": "Generate content briefs for each topic using entity-first semantic modeling.",
+
+  "rules": [
+    "Focus on information gain, not basic coverage",
+    "Use topics, questions, semantic relations, and entities",
+    "Each brief must align with a clear intent type",
+    "Avoid repeating sections across topics unless necessary",
+    "Each section must add unique semantic value",
+    "Return JSON only with no explanations"
+  ],
+
+  "intent_types": [
+    "informational",
+    "diagnostic",
+    "solution",
+    "comparison",
+    "decision"
+  ],
+
+  "coverage_dimensions": [
+    "definition",
+    "mechanism",
+    "diagnostic",
+    "failure",
+    "measurement",
+    "implementation"
+  ],
+
+  "constraints": [
+    "Each brief must cover at least 4 coverage dimensions",
+    "Each brief must include at least 2 relationship-based sections",
+    "Each brief must answer 6–12 questions",
+    "Each brief must include 5–10 sections"
+  ],
+
+  "input": {
+    "hierarchical_topics": [],
+    "questions_by_topic": [],
+    "semantic_relations": [],
+    "core_entities": []
+  },
+
+  "output_schema": {
+    "content_briefs": [
+      {
+        "topic_id": "",
+        "title": "",
+        "intent": "",
+        "entity_salience": {
+          "primary_entity": "",
+          "secondary_entities": []
+        },
+        "entities_to_cover": {
+          "primary": [],
+          "secondary": [],
+          "supporting": []
+        },
+        "information_gain_focus": [],
+        "questions_to_answer": [],
+        "serp_targets": [],
+        "key_sections": [
+          {
+            "section": "",
+            "section_type": ""
+          }
+        ]
+      }
+    ]
+  }
 }
