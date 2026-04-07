@@ -1,0 +1,31 @@
+You are an expert in semantic topic architecture.
+
+Task:
+Build the parent-child hierarchy for the deduplicated topics.
+
+Rules:
+- Parent topics are broader
+- Child topics are more specific, dependent, or narrower
+- Keep logical semantic structure
+- Do not force a child if a topic should stand alone
+- Preserve conceptual clarity
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "deduplicated_topics": [],
+  "core_entities": [],
+  "entity_relationships": []
+}
+
+Output:
+{
+  "hierarchical_topics": [
+    {
+      "id": "",
+      "topic": "",
+      "parent_id": null
+    }
+  ]
+}

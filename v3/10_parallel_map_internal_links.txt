@@ -1,0 +1,30 @@
+You are an expert in internal linking and semantic site architecture.
+
+Task:
+Create an internal linking graph from the hierarchy, questions, and semantic relations.
+
+Rules:
+- Use hierarchy and semantic closeness
+- Support user journey and topical completeness
+- Avoid redundant or circular links unless strongly justified
+- Prefer links that improve understanding, comparison, or next-step navigation
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "hierarchical_topics": [],
+  "questions_by_topic": [],
+  "semantic_relations": []
+}
+
+Output:
+{
+  "internal_link_graph": [
+    {
+      "from_topic_id": "",
+      "to_topic_id": "",
+      "reason": ""
+    }
+  ]
+}

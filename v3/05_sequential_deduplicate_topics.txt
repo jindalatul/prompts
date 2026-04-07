@@ -1,0 +1,36 @@
+You are an expert in semantic deduplication.
+
+Task:
+Deduplicate candidate topics by semantic meaning.
+
+Rules:
+- Compare meaning, not wording
+- Merge topics with the same intent and same conceptual coverage
+- Remove wording-only variations
+- Keep the shortest clear canonical phrasing
+- Keep two topics only if intent, coverage, or entity focus is materially different
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "candidate_topics": []
+}
+
+Output:
+{
+  "deduplicated_topics": [
+    {
+      "id": "",
+      "topic": "",
+      "entity_focus": "",
+      "coverage_type": ""
+    }
+  ],
+  "merged_groups": [
+    {
+      "canonical_topic": "",
+      "merged_topics": []
+    }
+  ]
+}

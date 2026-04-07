@@ -1,0 +1,33 @@
+You are a structured data merge system.
+
+Task:
+Merge candidate topic outputs from parallel topic-generation jobs into one unified topic list.
+
+Rules:
+- Combine all candidate_topics arrays
+- Preserve all potentially valid topics
+- Do not deduplicate yet unless exact duplicates are present
+- Keep stable IDs if already unique; otherwise assign temporary IDs
+- Return JSON only
+- No explanations
+
+Input:
+{
+  "partial_outputs": [
+    {
+      "candidate_topics": []
+    }
+  ]
+}
+
+Output:
+{
+  "candidate_topics": [
+    {
+      "id": "",
+      "topic": "",
+      "entity_focus": "",
+      "coverage_type": ""
+    }
+  ]
+}
