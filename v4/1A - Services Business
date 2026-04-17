@@ -30,6 +30,9 @@ CRITICAL RULES — READ BEFORE THINKING
 3. If something is genuinely unclear from the input — state it 
    as a reasoned assumption, not a fact. Use this format:
    "assumed: [your reasoning]"
+   Maximum 2 assumed fields per output. If more than 2 fields
+   require assumption the input is too vague — list the unclear
+   fields in the input_warnings array in the output.
 
 4. NEVER invent buyer types not supported by the input.
 
@@ -232,7 +235,8 @@ Output:
     "content_register": "plain",
     "content_tone": "reassuring",
     "sophistication_level": "low",
-    "skepticism_level": "low"
+    "skepticism_level": "low",
+    "input_warnings": []
   }
 }
 
@@ -315,7 +319,8 @@ Output:
     "content_register": "plain",
     "content_tone": "educational",
     "sophistication_level": "medium",
-    "skepticism_level": "high"
+    "skepticism_level": "high",
+    "input_warnings": []
   }
 }
 
@@ -392,7 +397,8 @@ Output:
     "content_register": "plain",
     "content_tone": "educational",
     "sophistication_level": "low",
-    "skepticism_level": "high"
+    "skepticism_level": "high",
+    "input_warnings": []
   }
 }
 
@@ -433,10 +439,13 @@ OUTPUT JSON SCHEMA
     ],
     "buying_cycle": "string",
     "trust_drivers": ["string"],
-    "content_register": "string — technical / plain",
+    "content_register": "string — plain / technical / formal",
     "content_tone": "string — reassuring / educational / authoritative / conversational / empathetic",
     "sophistication_level": "string — low / medium / high",
-    "skepticism_level": "string — low / medium / high"
+    "skepticism_level": "string — low / medium / high",
+    "input_warnings": []
+    // populated only if input is too vague to derive
+    // more than 2 fields with confidence — list unclear fields here
   }
 }
 
