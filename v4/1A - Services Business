@@ -53,11 +53,11 @@ INPUT YOU WILL RECEIVE
   "description": "",
   "services": [],
   "locations": {
-    "primary": "",           // always present
-    "additional": []         // optional — empty array if single location
+    "primary": "",
+    "additional": []
   },
   "target_audience": "",
-  "service_reach": ""        // optional — local / national / global
+  "service_reach": ""
 }
 
 LOCATION RULES:
