@@ -93,6 +93,29 @@ STEP 1 — IDENTIFY CORE SERVICE PAGES
    - Rule: if a business has a parent service with sub-services 
      — create a parent page + child pages.
 
+   CONSOLIDATION CHECK — RUN BEFORE ASSIGNING ANY SERVICE PAGES:
+   For every pair of services ask three questions:
+   Q1: Do they solve the same buyer problem?
+   Q2: Would the same buyer type search for both?
+   Q3: Would both pages have near-identical section structures?
+
+   If yes to all three — consolidate into ONE page.
+   Rules for consolidation:
+   - Name the page after the broader buyer problem not a service name
+   - List both services as sub-topics within that page
+   - Set entity_represented to cover both services
+   - Add this note to why_it_exists:
+     "consolidated: [service A] and [service B] solve identical 
+     buyer problem — separate pages would create thin content 
+     and keyword cannabilisation"
+   - Do NOT create individual pages for either service after 
+     consolidating — they are covered within the consolidated page
+
+   Example:
+   "Drain cleaning" + "Blocked drain repair" + "Drain unblocking"
+   consolidated into ONE page: "Drain Cleaning and Blockage Removal"
+   NOT three separate service pages
+
 STEP 2 — DECIDE LOCATION PAGE STRATEGY
    From service_reach + locations + business_type:
    
